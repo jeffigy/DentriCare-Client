@@ -8,7 +8,6 @@ import {
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react";
-import DashSpinner from "components/Dashboard/DashSpinner";
 import { useGetPaymentsQuery } from "features/payments/paymentApiSlice";
 import { useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
@@ -23,7 +22,6 @@ const BalanceList = () => {
     data: balances,
     isError,
     isSuccess,
-    isLoading,
     error,
   } = useGetPaymentsQuery("paymentsList", {
     pollingInterval: 6000,
