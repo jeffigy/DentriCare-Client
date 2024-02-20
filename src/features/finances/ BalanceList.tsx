@@ -62,8 +62,6 @@ const BalanceList = () => {
     },
   ];
 
-  if (isLoading) return <DashSpinner />;
-
   if (isError)
     return (
       <Flex justify={"center"}>{(error as ErrorType)?.data?.message}</Flex>
@@ -115,7 +113,12 @@ const BalanceList = () => {
       </InputGroup>
     );
     return (
-      <Card w={"500px"}>
+      <Card
+        w={{
+          base: "full",
+          sm: "500px",
+        }}
+      >
         <CardBody>
           <DataTable
             title="Patients with balances"
